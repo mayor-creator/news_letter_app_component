@@ -1,5 +1,11 @@
+import { ImageCard } from "./components/ImageCard";
+
 function App() {
-	return;
+	return (
+		<>
+			<ImageCard></ImageCard>
+		</>
+	);
 }
 
 export default App;
