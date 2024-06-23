@@ -1,9 +1,9 @@
-import { ImageCard } from "./components/ImageCard";
+import { MainPage } from "./components/MainPage";
 
 function App() {
 	return (
 		<>
-			<ImageCard></ImageCard>
+			<MainPage></MainPage>
 		</>
 	);
 }
