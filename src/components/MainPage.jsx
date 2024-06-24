@@ -1,11 +1,28 @@
+import { useState } from "react";
+import iconList from "../assets/images/icon-list.svg";
 import { ImageCard } from "./ImageCard";
 import { Input } from "./Input";
 import { Button } from "./Button";
-//import { SuccessPage } from "./SuccessPage";
-
-import iconList from "../assets/images/icon-list.svg";
 
 export function MainPage() {
+	const [email, setEmail] = useState("");
+	const [editEmail, setEditEmail] = useState(false);
+
+	function handleEmailChange(event) {
+		setEmail(event.target.value);
+		setEditEmail(true);
+	}
+
+	function handleEmailOnSubmit(event) {
+		event.preventDefault();
+		setEmail("");
+		setEditEmail(false);
+	}
+
+	const emailValid = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g;
+	const isValidEmail = emailValid.test(email);
+	let error = "Valid email is required";
+
 	return (
 		<>
 			<main>
@@ -41,16 +58,21 @@ export function MainPage() {
 								</li>
 							</ul>
 						</div>
-						<form>
-							<Input
-								label="Email address"
-								id="email"
-								name="email"
-								placeholder="email@company.com"
-								required
-								type="email"
-							/>
-							<Button>Subscribe to monthly newsletter</Button>
+						<form onSubmit={handleEmailOnSubmit}>
+							<div>
+								<Input
+									label="Email address"
+									id="email"
+									name="email"
+									placeholder="email@company.com"
+									required
+									type="email"
+									value={email}
+									onChange={handleEmailChange}
+								/>
+							</div>
+							{editEmail && !isValidEmail && <p>{error}</p>}
+							<Button type="submit">Subscribe to monthly newsletter</Button>
 						</form>
 					</section>
 				</div>
