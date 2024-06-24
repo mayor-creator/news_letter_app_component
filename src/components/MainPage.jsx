@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import iconList from "../assets/images/icon-list.svg";
 import { ImageCard } from "./ImageCard";
 import { Input } from "./Input";
@@ -7,6 +9,7 @@ import { Button } from "./Button";
 export function MainPage() {
 	const [email, setEmail] = useState("");
 	const [editEmail, setEditEmail] = useState(false);
+	const navigate = useNavigate();
 
 	function handleEmailChange(event) {
 		setEmail(event.target.value);
@@ -17,6 +20,7 @@ export function MainPage() {
 		event.preventDefault();
 		setEmail("");
 		setEditEmail(false);
+		navigate("/success");
 	}
 
 	const emailValid = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g;
