@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 
 import { Button } from "./Button";
 import successIcon from "../assets/images/icon-success.svg";
 
-export function SuccessPage({ email }) {
+import { EmailContext } from "./EmailContext";
+
+export function SuccessPage() {
+	const { email } = useContext(EmailContext);
 	const navigate = useNavigate();
 
 	function handleDismissMessage() {
