@@ -11,6 +11,7 @@ export function ImageCard() {
 					sizes="100vw"
 				/>
 				<img
+					className="image-full-width"
 					src={mobile}
 					alt="illustration sign up "
 				/>
