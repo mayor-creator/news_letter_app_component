@@ -1,31 +1,21 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 
 import iconList from "../assets/images/icon-list.svg";
 import { ImageCard } from "./ImageCard";
 import { Input } from "./Input";
 import { Button } from "./Button";
 
+import { EmailContext } from "./EmailContext";
+
 export function MainPage() {
-	const [email, setEmail] = useState("");
-	const [editEmail, setEditEmail] = useState(false);
-	const navigate = useNavigate();
-
-	function handleEmailChange(event) {
-		setEmail(event.target.value);
-		setEditEmail(true);
-	}
-
-	function handleEmailOnSubmit(event) {
-		event.preventDefault();
-		setEmail("");
-		setEditEmail(false);
-		navigate("/success");
-	}
-
-	const emailValid = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g;
-	const isValidEmail = emailValid.test(email);
-	let error = "Valid email is required";
+	const {
+		email,
+		editEmail,
+		isValidEmail,
+		error,
+		handleEmailChange,
+		handleEmailOnSubmit,
+	} = useContext(EmailContext);
 
 	return (
 		<>
