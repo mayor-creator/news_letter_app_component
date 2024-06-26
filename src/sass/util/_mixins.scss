@@ -4,5 +4,15 @@
 @mixin button {
   color: var(--color-white);
   background-color: var(--color-dark-navy);
-  border-radius: f.rem(20);
+  border-radius: f.rem(10);
+  border: none;
+  cursor: pointer;
+}
+
+@mixin input {
+  border: 1px solid hsl(0, 0%, 85%);
+  border-radius: f.rem(10);
+  padding-left: f.rem(20);
+  outline: none;
+  cursor: pointer;
 }
