@@ -17,16 +17,21 @@ export function SuccessPage() {
 	return (
 		<>
 			<main>
-				<img
-					src={successIcon}
-					alt="check mark icon"
-				/>
-				<h1> Thanks for subscribing!</h1>
-				<p>
-					A confirmation email has been sent to <strong>{email}</strong>. Please
-					open it and click the button inside to confirm your subscription.
-				</p>
-				<Button onClick={handleDismissMessage}> Dismiss message</Button>
+				<div>
+					<img
+						src={successIcon}
+						alt="check mark icon"
+						height={64}
+						width={64}
+					/>
+					<h1> Thanks for subscribing!</h1>
+					<p>
+						A confirmation email has been sent to <strong>{email}</strong>.
+						Please open it and click the button inside to confirm your
+						subscription.
+					</p>
+					<Button onClick={handleDismissMessage}> Dismiss message</Button>
+				</div>
 			</main>
 		</>
 	);
