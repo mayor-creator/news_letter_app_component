@@ -24,36 +24,37 @@ export function MainPage() {
 					<section>
 						<ImageCard></ImageCard>
 					</section>
-					<section>
+					<section className="information">
 						<h1>Stay updated!</h1>
 						<p>Join 60,000+ product managers receiving monthly updates on:</p>
-						<div>
-							<ul>
-								<li>
-									<img
-										src={iconList}
-										alt="check mark icon"
-									/>
-									<span>Product discovery and building what matters</span>
-								</li>
-								<li>
-									<img
-										src={iconList}
-										alt="check mark icon"
-									/>
-									<span>Measuring to ensure updates are a success</span>
-								</li>
-								<li>
-									<img
-										src={iconList}
-										alt="check mark icon"
-									/>
-									<span>And much more!</span>
-								</li>
-							</ul>
+						<div className="main-container">
+							<div className="container">
+								<img
+									className="icon"
+									src={iconList}
+									alt="check mark icon"
+								/>
+								<span>Product discovery and building what matters</span>
+							</div>
+							<div className="container">
+								<img
+									className="icon"
+									src={iconList}
+									alt="check mark icon"
+								/>
+								<span>Measuring to ensure updates are a success</span>
+							</div>
+							<div className="container">
+								<img
+									className="icon"
+									src={iconList}
+									alt="check mark icon"
+								/>
+								<span>And much more!</span>
+							</div>
 						</div>
 						<form onSubmit={handleEmailOnSubmit}>
-							<div>
+							<div className="email-input">
 								<Input
 									label="Email address"
 									id="email"
