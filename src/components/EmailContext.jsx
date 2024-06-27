@@ -21,7 +21,7 @@ export function EmailContextProvider({ children }) {
 
 	const emailValid = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g;
 	const isValidEmail = emailValid.test(email);
-	const error = "Valid email is required";
+	const error = "Valid email required";
 
 	return (
 		<>

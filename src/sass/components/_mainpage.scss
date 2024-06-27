@@ -1,3 +1,4 @@
+@use "../util/breakpoints" as b;
 @use "../util/variables" as v;
 @use "../util/functions" as f;
 @use "../util/mixins" as m;
@@ -6,6 +7,10 @@ body {
   background-color: var(--color-white);
   font-family: v.$font-family;
   color: var(--color-dark-navy);
+
+  @include b.breakpoint(medium) {
+    background-color: var(--color-pale-navy);
+  }
 }
 
 h1 {
@@ -53,13 +58,15 @@ button:hover {
 }
 
 .image-full-width {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  max-width: 100vw;
-  width: 100vw;
+  @include b.breakpoint-down(small) {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    width: 100vw;
+  }
 }
 
 .information {
@@ -85,4 +92,46 @@ button:hover {
 
 .email-input {
   padding-top: f.rem(24);
+}
+
+.error-message {
+  color: var(--color-vermellion);
+  font-size: f.rem(12);
+  font-weight: v.$font-bold;
+}
+
+.flex-parent-container {
+  @include b.breakpoint(medium) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}
+
+.grid-container {
+  @include b.breakpoint(medium) {
+    display: grid;
+    grid-template-columns: f.rem(378) 1fr;
+    gap: f.rem(40);
+    place-items: center;
+    width: min(100% - f.rem(32), f.rem(928));
+    margin-inline: auto;
+    background-color: var(--color-white);
+    border-radius: f.rem(36);
+    padding: f.rem(24);
+  }
+}
+
+.content-container {
+  @include b.breakpoint(medium) {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+}
+
+.image-container {
+  @include b.breakpoint(medium) {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
 }

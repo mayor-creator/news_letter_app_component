@@ -1,0 +1,25 @@
+@use "../util/breakpoints" as b;
+@use "../util/variables" as v;
+@use "../util/functions" as f;
+@use "../util/mixins" as m;
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  @include b.breakpoint(medium) {
+    background-color: var(--color-white);
+    border-radius: f.rem(36);
+    min-height: f.rem(520);
+    width: min(100% - f.rem(32), f.rem(504));
+    margin-inline: auto;
+    padding: f.rem(24);
+    margin-top: f.rem(200);
+  }
+}
+
+.success-container {
+  padding: f.rem(24)
+}

@@ -4,7 +4,6 @@ import iconList from "../assets/images/icon-list.svg";
 import { ImageCard } from "./ImageCard";
 import { Input } from "./Input";
 import { Button } from "./Button";
-
 import { EmailContext } from "./EmailContext";
 
 export function MainPage() {
@@ -19,12 +18,12 @@ export function MainPage() {
 
 	return (
 		<>
-			<main>
-				<div>
-					<section>
+			<main className="flex-parent-container">
+				<div className="grid-container">
+					<section className="image-container">
 						<ImageCard></ImageCard>
 					</section>
-					<section className="information">
+					<section className="information content-container">
 						<h1>Stay updated!</h1>
 						<p>Join 60,000+ product managers receiving monthly updates on:</p>
 						<div className="main-container">
@@ -66,7 +65,9 @@ export function MainPage() {
 									onChange={handleEmailChange}
 								/>
 							</div>
-							{editEmail && !isValidEmail && <p>{error}</p>}
+							{editEmail && !isValidEmail && (
+								<p className="error-message">{error}</p>
+							)}
 							<Button type="submit">Subscribe to monthly newsletter</Button>
 						</form>
 					</section>

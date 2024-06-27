@@ -3,7 +3,6 @@ import { useContext } from "react";
 
 import { Button } from "./Button";
 import successIcon from "../assets/images/icon-success.svg";
-
 import { EmailContext } from "./EmailContext";
 
 export function SuccessPage() {
@@ -16,8 +15,8 @@ export function SuccessPage() {
 
 	return (
 		<>
-			<main>
-				<div>
+			<main className="flex-container">
+				<div className="success-container">
 					<img
 						src={successIcon}
 						alt="check mark icon"
