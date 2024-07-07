@@ -55,6 +55,9 @@ export function MainPage() {
 						<form onSubmit={handleEmailOnSubmit}>
 							<div className="email-input">
 								<Input
+									className={
+										editEmail && !isValidEmail ? "error-message-input" : ""
+									}
 									label="Email address"
 									id="email"
 									name="email"
