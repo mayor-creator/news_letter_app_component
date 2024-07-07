@@ -36,6 +36,10 @@ input {
   height: f.rem(56);
   width: f.rem(327);
   @include m.input;
+
+  @include b.breakpoint(medium) {
+    width: f.rem(376);
+  }
 }
 
 input:hover {
@@ -50,6 +54,10 @@ button {
   font-size: f.rem(16) !important;
   font-weight: v.$font-bold !important;
   @include m.button;
+
+  @include b.breakpoint(medium) {
+    width: f.rem(376);
+  }
 }
 
 button:hover {
@@ -100,6 +108,11 @@ button:hover {
   font-weight: v.$font-bold;
 }
 
+.error-message-input {
+  color: var(--color-vermellion);
+  border: 1px solid #FF6155;
+}
+
 .flex-parent-container {
   @include b.breakpoint(medium) {
     display: flex;
@@ -133,5 +146,4 @@ button:hover {
   @include b.breakpoint(medium) {
     grid-area: 1 / 2 / 2 / 3;
   }
-
 }
