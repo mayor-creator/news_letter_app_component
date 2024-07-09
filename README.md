@@ -73,6 +73,7 @@ onChange={handleEmailChange}
 
 - Testing React Apps (unit test)
 - Handling Error Message in React
+- Tailwind CSS with React
 
 ### Useful resources
 
